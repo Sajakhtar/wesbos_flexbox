@@ -87,3 +87,19 @@ Alternative, to stay within the flex container, would be to use `width: calc(33.
 Or you can use padding and border as they are a part of the box model.
 
 ## Flexbox Ordering
+
+A way to move your DOM elements without actually moving them in the html file.
+
+Applying `flex: 1;` on the flex items, will take the items and evening distribute them across the main axis of the flex container.
+
+The `order` property can be applied within the flex items
+
+Default order is 0, `order: 0;`, so setting order of a flex item to >0 will move that item to the end, or <0 wll move that item to the start.
+
+The `order` is helpful when working with responsive design, where you want to reorder elements in the mobile view.
+
+If you set the an flex item to `order: 1;`, it'll be moved to the end, and if you then set another item to `order: 2;` it'll come after the item at order 1.
+
+Caveat - if you select the items with your mouse, perhaps to copy text, what you'll actually copy and paste are the html elements in the order they were written. So, it's not wise to use the `order` property for html elements that are likely to be copied often.
+
+# Flexbox Alignment and Centering with justify-content
