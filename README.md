@@ -102,4 +102,69 @@ If you set the an flex item to `order: 1;`, it'll be moved to the end, and if yo
 
 Caveat - if you select the items with your mouse, perhaps to copy text, what you'll actually copy and paste are the html elements in the order they were written. So, it's not wise to use the `order` property for html elements that are likely to be copied often.
 
-# Flexbox Alignment and Centering with justify-content
+## Flexbox Alignment and Centering with justify-content
+
+`justify-content` describes how items are aligned on the main axis.
+
+See `justify-content` in [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#justify-content) for visual examples.
+
+- `justify-content: flex-start` sets items to the start of the flex container
+- `justify-content: flex-end` sets items to the start of the flex container
+- `justify-content: center` sets items to the center of the flex container, so there's no need for margin tricks
+- `justify-content: space-between` distributes items evenly along the main axis, otherwise the items are as wide as the content i.e natural width. The first item will be at flex-start and the last item will be at flex-end, the rest of the items will be divied up in between
+- `justify-content: space-around`similar to space-between but also adds same margin for the firt item after flex-start and the last item before flex-end, but of course the magin between items will be 2 times (one margin for each item)
+- `justify-content: space-evenly`similar again, but now the space between flex-start and first item is the same as between each item and between last item and flex-end
+
+All this works fine for the default `flex-direction`, i.e. row, where the main axis is left to right.
+
+When `flex-direction: column`, where main axis is top to botton, the flex container is as tall as the content, so justify content won't work unless you give the container a height, `min-height: 100vh`.
+
+Always stop to think the direction of the the main axis and cross axis.
+
+## Flexbox Alignment and Centering with align-items
+
+While `justify-content` works along the main axis, `align-items` works on the cross axis.
+
+See `align-items` in [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#align-items) for visual examples.
+
+If working with default `flex-direction` i.e. row, then the flex container needs some height to it for `align-items` to work.
+
+By default, the items will take the height of the flex container, which is equivalent to `align-items: stretch`.
+
+- `align-items: center` will center the items along the cross axis
+- `align-items: flex-start` will place items at the start of the container on the cross axis
+- `align-items: flex-end` will place items at the end of the container on the cross axis
+- `align-items: baseline` looks at the text in your items will and ensures the bottom of every single text is aligned on the cross axis. Very handly for vertically (when `flex-direction: row`) aligning items of differnt sizes e.g. a title on the right and a data on the left
+
+## Flexbox Alignment and Centering with align-content
+
+See `align-content` in [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#align-content) for visual examples.
+
+Whiles `justify-content` dictates when happens to the white space and distribution of items along the main axis, `align-content` takes the space along the cross axis and splits it up for the _wrapped_ items i.e. stacked items.
+
+`align-content` has the same options as `justify-content`.
+
+- `align-content: stretch` is the default, i.e. the items will take up the entire cross axis, split evenly
+- `align-content: flex-start` places the items at the start of the cross axis and take up on the necessary space of the content contained in the item. In `flex-direction: row`, all items on the same row will be the same height, where the min height is based on the item with the maximum content.
+- `align-content: flex-end` places the items at the end of the cross axis and take up on the necessary space of the content contained in the item. In `flex-direction: row`, all items on the same row will be the same height, where the min height is based on the item with the maximum content.
+- `align-content: center` places the items at the center of the cross axis
+- `align-content: sapce-between` set the first row to flex start and last row to flex end, and the in between rows are spaced evenly
+- `align-content: space-around`similar to space-between but also adds same margin for the firt item after flex-start and the last item before flex-end, but of course the magin between items will be 2 times (one margin for each item)
+- `align-content: space-evenly`similar again, but now the space between flex-start and first item is the same as between each item and between last item and flex-end
+
+To align items both at the center both horizontally and vertically set:
+
+- `align-content: center`
+  - to align veritically i.e.cross axis top to bottom, when `flex-direction: row` i.e. default
+  - to align horizontally i.e.cross axis left to right, when `flex-direction: column`
+- `justify-content: center`
+  - to align horizontally i.e.main axis left to right, when `flex-direction: row` i.e. default
+  - to align veritically i.e.main axis top to bottom, when `flex-direction: column`
+
+## Flexbox Alignment and Centering with align-self
+
+while `align-items` distributed the items across the cross-axis, `align-self` allows for us to overwrite the rule for an individual item.
+
+`align-self` has the same options as `align-items`.
+
+## Understanding Flexbox sizing with the flex property
