@@ -168,3 +168,88 @@ while `align-items` distributed the items across the cross-axis, `align-self` al
 `align-self` has the same options as `align-items`.
 
 ## Understanding Flexbox sizing with the flex property
+
+`flex` property goes on the individual flex items.
+`flex` answers the question of what to do with extra space or when there isn't enough space.
+
+Width of flex items is auto by default, where auto is the width of the content in the flex items.
+
+- `flex: 1`, regardless of the amount of content inside the flex items, the extra space will be evenly given to the flex items
+- `flex: 2`, giving one flex item a flex of 2, while all other items remain as flex 1, the flex 2 item will get twice the extra space across the main axis
+
+`flex` can take decimal points as well.
+
+## Understanding Flexbox flex-grow, flex-shrink and flex-basis
+
+Within the `flex` property, there are actually three properties that are packed into it - `flex-grow`, `flex-shrink`, `flex-basis`
+
+- `flex-grow`
+  - answers when we have extra space, how should we divide by all the items on the same line?
+  - By setting `flex: 1`, you're essentially setting `flex-grow: 1` and `flex-shrink: 1` at the same time
+  - default `flex-grow: 0`, i.e. extra space is left alone, flex items won't fill it
+- `flex-shrink`
+
+  - how do slim the flex items down when there isn't enough space on the main axis
+  - default `flex-shrink: 1`, i.e evenly divide the sapce on the main axis amongst the flex items
+  - determines how much space the flex item should give up in proportion to the other items i.e. if item 1 has `flex-shrink: 10` while item 2 is on the default, then item 1 shirnks itself 10 times more space as item 2
+
+- `flex-basis`, defines how wide the item should be along main axis, then `flex-grow` and `flex-shrink` will define how the extra space or lack of space should be used
+
+Practically, you can use `flex` to specify `flex-grow`, `flex-shrink`, `flex-basis` like so `flex: 10 5 400px`. It's recommended to set these properties in the `flex` shorthand.
+
+You do give up some control from setting hard widths in regular CSS, but that's the beauty of flexbox.
+
+## How Flexbox's flex-basis and wrapping work together
+
+With `flex-wrap: wrap` then `flex-grow`, `flex-shrink`, `flex-basis` only impact the items on the same row, for `flex-direction: row` (default)
+
+For `flex-direction: column`, the items stack themselves vertically, and the main axis is top to bottom. `flex-grow`, `flex-shrink`, `flex-basis` will not have any impact unless the flex-container has a height e.g. `min-height: 100vh` or `height: 100vh` if your want items to wrap based on height of the browser. The wrapping with create as many columns needed acording to the browser height and the pixels set within `flex-basis` for each flex element. Then `flex-grow` and `flex-shrink`will only apply within the relevant column.
+
+## Cross Browser Flexbox Support and Autoprefixer!
+
+Flexbox has been around for quite a while, but some browsers use the old version (2009) of Flexbox and other use the new version, Prefix Flexbox. We can run our code through a compile step to make our CSS compatible with older browser.
+
+Autoprefixer takes your clean modern Flexbox CSS and prefixes it with the brwoser vendor prefixes and older display box syntax.
+
+You can see what your clean CSS will be converted to using the tool: [Autoprefixer CSS online](http://autoprefixer.github.io/)
+
+Toe use Autoprefixer, we need to setup a build step usign [Gulp](https://gulpjs.com/). Gulp will compile the CSS every time we update and save it.
+
+To intall Gulp, you need to have [node.js](https://nodejs.org/en/) installed.
+
+Using the terminal, initialize a node project in your folder using `npm init`. This will create a `package.json` file to track the dependencies and their versions.
+
+Using the terminal, install Gulp globally with `npm install gulp -g` or `sudo npm install gulp -g`.
+
+Next, using the terminal, create a gulp file with `touch gulpfile.js`.
+
+Now install a local version of Gulp with `npm install gulp --save-dev`. You'll see that Gulp is added to the dependencies in `package.json` file.
+
+Next, install the autoprefixer with `npm install gulp-autoprefixer --save-dev`. This will be added to the dependencies in `package.json` file.
+
+In the `gulpfile.js` we'll need the entire Gulp library and all the plugins we need:
+
+```js
+var gulp = require("gulp");
+var autoprefixer = require("gulp-autoprefixer");
+
+gulp.task("styles", function () {
+  gulp.src("css/styles.css").pipe(autoprefixer()).pipe(gulp.dest("build"));
+});
+```
+
+In the terminal, excute `gulp styles` to run the Gulp styles task. This will create a new directory called _build_ where our autoprefixed CSS will be.
+
+In the `index.html` file update the CSS reference to the autopreixed version i.e. `<link rel="stylesheet" href="build/style.css">`
+
+We don't want to manually run the _styles_ Gulp task every time we make CSS changes, so we'll add a watch task to `gulpfile.js` to automatically run the _styles_ task when the CSS file changes.
+
+```js
+gulp.task("watch", function () {
+  gulp.watch("css/styles.css", ["styles"]);
+});
+```
+
+In the terminal, excute `gulp watch` to run the Gulp watch task, then every time the CSS file is saved, the _styles_ task will run.
+
+## Mobile Content reordering with Flexbox
