@@ -10,7 +10,7 @@ official GitHub [repo](https://github.com/wesbos/What-The-Flexbox/blob/master/in
 
 ## Contents
 
-1. [Introduction to Flexbox](#ntroduction-to-flexbox)
+1. [Introduction to Flexbox](#introduction-to-flexbox)
 1. [Working with Flexbox flex-direction](#working-with-Flexbox-flex-direction)
 1. [Wrapping elements with Flexbox](#wrapping-elements-with-Flexbox)
 1. [Flexbox Ordering](#flexbox-ordering)
