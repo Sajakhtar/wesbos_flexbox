@@ -317,3 +317,22 @@ Then set the order of the navigation to 1 to bring it to the top, `.flex-nav {or
 As the the Nav toggle is clicked, the class of the nav is set to change to `open` and so for the nav items to appear once the toggle is clicked, we need to set `.flex-nav ul.open {display: flex;}`.
 
 ## Nesting Flexbox for vertical and horizontal centering with Flexbox
+
+[Live Demo]() - ADD LINK
+
+Here we want to center items horizontally and vertically that requires nesting to make the entire area of the item clickable.
+
+_Tip_: add a tiny red border around flex items just to see where they are.
+
+Centering test in flex items along the main axis is done using `text-align: center` within the flex items CSS.
+
+Centering flex items along the cross axis is done using `align-items: center` within the flex container CSS. However, now the flex items border takes up only the space of the content inside.
+(The default `align-items: stretch` make all the flex items take the same height as that of the item with the most text).
+
+So now this is where a nested flex container comes in, to make all the flex items take the same amount of space and center the text vertically, because we want both `align-items: stretch` and `align-items: center`, but we can't do both in the same flex container.
+
+So we leave the flex container with the default `align-items: stretch`, and instead we turn the flex items into flex containers as well, which makes the immediate child the flex items that we also turn into flex items`.
+
+Use `<span>` tag to create a flex item, if the nested nested flex container has not children.
+
+Simply apply `align-items: center` nested nested flex container and `display: block` to the nested nested flex items, so that everything will be both stretched and centered horizontally and vertically within the initial flex container.
