@@ -2,9 +2,9 @@
 
 [What the Flexbox?!](https://flexbox.io/) course by [Wes Bos](https://wesbos.com/).
 
-official GitHub [repo](https://github.com/wesbos/What-The-Flexbox/blob/master/intro/style.css)
+Official GitHub [repo](https://github.com/wesbos/What-The-Flexbox/blob/master/intro/style.css)
 
-[Project hostest on GitHub Pages]() - ADD LINK
+[Project hostest on GitHub Pages](https://sajakhtar.github.io/wesbos_flexbox/) - ADD LINK
 
 ---
 
@@ -32,7 +32,7 @@ official GitHub [repo](https://github.com/wesbos/What-The-Flexbox/blob/master/in
 
 ## Introduction to Flexbox
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/00-intro/)
 
 The CSS for your html element starts with `display: flex;` and this makes the content in flex container spans the width of the screen.
 
@@ -44,7 +44,7 @@ When working with flexbox, having a container with some height on it helps you v
 
 ## Working with Flexbox flex-direction
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/01-flex-direction/)
 
 [CSS Tricks guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
@@ -80,7 +80,7 @@ For `flex-direction: column-reverse`:
 
 ## Wrapping elements with Flexbox
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/02-flex-wrap/)
 
 Flex container will try to work with the width that you the Flex items, but if it doesnt work out it'll evenly distribute the flex items within the flex container, unless the flex property is used to set the width of individual flex items.
 
@@ -112,7 +112,7 @@ Or you can use padding and border as they are a part of the box model.
 
 ## Flexbox Ordering
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/03-ordering/)
 
 A way to move your DOM elements without actually moving them in the html file.
 
@@ -130,7 +130,7 @@ Caveat - if you select the items with your mouse, perhaps to copy text, what you
 
 ## Flexbox Alignment and Centering with justify-content
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/04-alignment-centering-justify-content/)
 
 `justify-content` describes how items are aligned on the main axis.
 
@@ -151,7 +151,7 @@ Always stop to think the direction of the the main axis and cross axis.
 
 ## Flexbox Alignment and Centering with align-items
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/05-alignment-centering-align-items/)
 
 While `justify-content` works along the main axis, `align-items` works on the cross axis.
 
@@ -168,7 +168,7 @@ By default, the items will take the height of the flex container, which is equiv
 
 ## Flexbox Alignment and Centering with align-content
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/06-alignment-centering-align-content/)
 
 See `align-content` in [CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#align-content) for visual examples.
 
@@ -195,7 +195,7 @@ To align items both at the center both horizontally and vertically set:
 
 ## Flexbox Alignment and Centering with align-self
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/07-alignment-centering-align-self/)
 
 while `align-items` distributed the items across the cross-axis, `align-self` allows for us to overwrite the rule for an individual item.
 
@@ -203,7 +203,7 @@ while `align-items` distributed the items across the cross-axis, `align-self` al
 
 ## Understanding Flexbox sizing with the flex property
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/08-flexbox-sizing-flex-property/)
 
 `flex` property goes on the individual flex items.
 `flex` answers the question of what to do with extra space or when there isn't enough space.
@@ -217,7 +217,7 @@ Width of flex items is auto by default, where auto is the width of the content i
 
 ## Understanding Flexbox flex-grow, flex-shrink and flex-basis
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/09-flexbox-flex-grow-shrink-basis/)
 
 Within the `flex` property, there are actually three properties that are packed into it - `flex-grow`, `flex-shrink`, `flex-basis`
 
@@ -239,7 +239,7 @@ You do give up some control from setting hard widths in regular CSS, but that's 
 
 ## How Flexbox's flex-basis and wrapping work together
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/10-flexbox-flex-basis-with-wrapping/)
 
 With `flex-wrap: wrap` then `flex-grow`, `flex-shrink`, `flex-basis` only impact the items on the same row, for `flex-direction: row` (default)
 
@@ -247,7 +247,7 @@ For `flex-direction: column`, the items stack themselves vertically, and the mai
 
 ## Cross Browser Flexbox Support and Autoprefixer
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/11-cross-browser-flexbox-support-autoprefixer/)
 
 Flexbox has been around for quite a while, but some browsers use the old version (2009) of Flexbox and other use the new version, Prefix Flexbox. We can run our code through a compile step to make our CSS compatible with older browser.
 
@@ -296,7 +296,7 @@ In the terminal, excute `gulp watch` to run the Gulp watch task, then every time
 
 ## Pure Flexbox navigation code along
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/12-pure-flexbox-navigation-code-along/)
 
 Building navigations is one of the most common and best use cases for Flexbox.
 
@@ -306,7 +306,7 @@ When dealing with mobile layouts, within the media query `@media all and (max-wi
 
 ## Mobile Content reordering with Flexbox
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/13-mobile-content-reordering-with-flexbox/)
 
 Always wrap your website html in a wrapper `<div>` just in case you need to turn it into a flex container i.e. `display: felx`, and all the children in the wrapper class will be flex items that your can easily reorder.
 
@@ -318,7 +318,7 @@ As the the Nav toggle is clicked, the class of the nav is set to change to `open
 
 ## Nesting Flexbox for vertical and horizontal centering with Flexbox
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/14-nesting-flexbox-vertical-horizontal-centering/)
 
 Here we want to center items horizontally and vertically that requires nesting to make the entire area of the item clickable.
 
@@ -339,7 +339,7 @@ Simply apply `align-items: center` nested nested flex container and `display: bl
 
 ## Flexbox Pricing Grid
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/15-flexbox-pricing-grid/)
 
 Here the entire pricing grid, `<div class="pricing-grid">`, would be the flex container and the immediate children, `<div class="plan plan1">`, will be the flex items.
 
@@ -351,7 +351,7 @@ But, we also want all the Call To Action buttions to be vertically aligned with 
 
 ## Flexbox Equal height columns and leftover elements
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/16-flexbox-equal-height-columns-leftover-elements/)
 
 When you have `flex-wrap: wrap`, each row is as tall as the flex item with the most content.
 
@@ -359,11 +359,13 @@ When you have `flex-wrap: wrap`, each row is as tall as the flex item with the m
 
 ## Flexbox single line form
 
-[Coverr](https://coverr.co/) has free stock autoplay videos.
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/17-flexbox-single-line-form/)
+
+[Coverr](https://coverr.co/) has free stock autoplaying videos.
 
 ## Create a mobile app layout with Flexbox
 
-[Live Demo]() - ADD LINK
+[See Live](https://sajakhtar.github.io/wesbos_flexbox/18-flexbox-mobile-app-layout/)
 
 This will be without media queries, only using Flexbox. Here we essentially create a fixed header and footer area, with content in between as scrolling, all with Flexbox.
 
