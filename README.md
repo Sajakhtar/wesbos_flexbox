@@ -4,7 +4,7 @@
 
 Official GitHub [repo](https://github.com/wesbos/What-The-Flexbox/blob/master/intro/style.css)
 
-[Project hostest on GitHub Pages](https://sajakhtar.github.io/wesbos_flexbox/) - ADD LINK
+[Project hostest on GitHub Pages](https://sajakhtar.github.io/wesbos_flexbox/)
 
 ---
 
