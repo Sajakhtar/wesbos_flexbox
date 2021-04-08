@@ -336,3 +336,35 @@ So we leave the flex container with the default `align-items: stretch`, and inst
 Use `<span>` tag to create a flex item, if the nested nested flex container has not children.
 
 Simply apply `align-items: center` nested nested flex container and `display: block` to the nested nested flex items, so that everything will be both stretched and centered horizontally and vertically within the initial flex container.
+
+## Flexbox Pricing Grid
+
+[Live Demo]() - ADD LINK
+
+Here the entire pricing grid, `<div class="pricing-grid">`, would be the flex container and the immediate children, `<div class="plan plan1">`, will be the flex items.
+
+We want each fo the flex items (plan divs) to be equal width, with the center text-align.
+
+The default is `align-items: stretch` at the flex container level, which stretches the flex items as high as the tallest flex item based on the content. `align-items: center` is closer to what we want, but now each flex item is as tall as the content contained within, which differs for each flex item.
+
+But, we also want all the Call To Action buttions to be vertically aligned with each other at the bottom of their respective flex item. So, we need to turn the CTA elements into flex items by turning the plan divs as flex containers. The CTA elements can all be moved to the bottom using `align-self: flex-end`, now that they're flex items.
+
+## Flexbox Equal height columns and leftover elements
+
+[Live Demo]() - ADD LINK
+
+When you have `flex-wrap: wrap`, each row is as tall as the flex item with the most content.
+
+`justify-content`at the flex container level will help distribute items when you have a row that is not complete.
+
+## Flexbox single line form
+
+[Coverr](https://coverr.co/) has free stock autoplay videos.
+
+## Create a mobile app layout with Flexbox
+
+[Live Demo]() - ADD LINK
+
+This will be without media queries, only using Flexbox. Here we essentially create a fixed header and footer area, with content in between as scrolling, all with Flexbox.
+
+React Native handles app layouts with Flexbox.
